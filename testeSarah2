@@ -1,0 +1,34 @@
+import Ball from './ball.js';
+import Player from './player.js';
+
+// Descrição
+describe('Game logic', () => {
+  // Teste para verificar se a bola se move corretamente
+  test('Ball movement', () => {
+    // Crie uma instância da bola
+    const ball = new Ball(400, 250, 10, 'white');
+
+    //  posição inicial da bola
+    const initialX = ball.x;
+    const initialY = ball.y;
+
+    // Movimente a bola (simule um movimento)
+    ball.move(5, 5); // Supondo um deslocamento de (5, 5)
+
+    // Verifique se a posição da bola mudou corretamente
+    expect(ball.x).toBe(initialX + 5); // A posição x deve ter sido deslocada em 5 unidades
+    expect(ball.y).toBe(initialY + 5); // A posição y deve ter sido deslocada em 5 unidades
+  });
+
+  // Teste para verificar se os jogadores são inicializados corretamente
+  test('Player initialization', () => {
+    // Crie uma instância do jogador
+    const player = new Player(100, 200, 20, 60, 'red');
+
+    // Verifique se as propriedades do jogador foram configuradas corretamente
+    expect(player.x).toBe(100); // Verifique a posição x
+    expect(player.y).toBe(200); // Verifique a posição y
+    expect(player.width).toBe(20); // Verifique a largura
+    expect(player.height).toBe(60); // Verifique a altura
+    expect(player.color).toBe('red'); // Verifique a cor
+  });
