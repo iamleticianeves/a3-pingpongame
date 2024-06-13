@@ -17,7 +17,7 @@ describe('Teste de Desempenho do PingPongGame', () => {
         const duration = endTime - startTime;
 
         console.log(`moveBall took ${duration}ms for 1000 iterations`);
-        expect(duration).toBeLessThan(50); // Ajuste o valor conforme necessário para seu contexto
+        expect(duration).toBeLessThan(50); 
     });
 
     it('Deve inicializar sem contas', () => {
